@@ -1,0 +1,81 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "musd"
+dynamic = ["version", "description"]
+readme = "README.md"
+requires-python = "~=3.9"
+authors = [
+    {name = "Charles Vincent", email = "charles.vincent@ukaea.uk"},
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "License :: Other/Proprietary License",
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "pandas",
+    "fire",
+    "pyyaml >= 6.0",
+    "shapely",
+    "Cython >= 0.29",
+    "fqdn==1.5.1",
+    "PyQt5",
+    "pyqtgraph",
+]
+
+[project.urls]
+repository = "https://git.ccfe.ac.uk/MAST-U_Scheduler/musd"
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-cov",
+    "coverage[toml]",
+    "netCDF4",
+    "jsonschema",
+]
+lint = [
+    "pylint >= 2.12"
+]
+
+[project.scripts]
+musd = "musd.__main__:main"
+
+[tool.flit.module]
+name = "musd"
+
+[tool.pylint.main]
+ignore-paths = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    "docs/source/conf.py",
+    "venv",
+    "env",
+    ".venv",
+    ".env"
+]
+
+[tool.pylint."MESSAGES CONTROL"]
+disable="fixme,invalid-name"
+
+[tool.pylint.FORMAT]
+max-line-length=100
+
+[tool.pylint.DESIGN]
+max-args=7
+max-locals=30
+
+[tool.coverage.run]
+source = ["musd"]
+omit = ["musd/__main__.py"]
+
+[tool.coverage.report]
+omit = [ "*/python?.?/*", "*/site-packages/nose/*"]
+exclude_lines = ["if __name__ == '__main__':"]
