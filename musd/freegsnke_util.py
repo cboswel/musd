@@ -40,7 +40,7 @@ def set_env(config=None, symmetric_machine=False):
 
         config = config + "musd_config/"
 
-    config = "/home/charlie/musd/musd_config/"
+    config = "./musd_config/"
     # Now that the files are made we can set the environment variables
     # Personally I'm not sure I like this way of setting up the machine, but
     # I don't really have the time to faff with it right now
