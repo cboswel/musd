@@ -1,37 +1,27 @@
-# MUSD
+MAST-U Shot Design Tool
+=======================
 
-Python package for shot design on MAST-U
+To install and run the tool, you will need the following:
+    - Python (Version 3.9 or Higher)
 
-## Purpose
+Installation
+------------
 
-Tool has been created to help design coil current paths for scenario development on MAST-U. This has been adapted from a code made by James Harrison.
+First of all, bring up a terminal. Command prompt or powershell should work fine for Windows. You can access these by searching in the start menu or by right clicking in a folder you want to work in and selecting "Open in Terminal".
 
-## Usage
+Check which version of Python you have installed by typing `python --version` into the command prompt and pressing enter. It should be between 3.9 and 3.12. If it isn't, download and install a version in that range.
 
-Tool opens a gui with sliders to adjust coil currents. Development is on going to be able to lock ratios with a virtual circuit and then drive that instead.
+Now we need to download all our code. Click the green "code" button on the top right of this git repository and choose Download Zip. Extract it. Alternatively, paste the following command into the terminal to download the tool into the current directory (You might need to install git for this method):
 
-To run this code you will need access to the freegsnke repo. For the moment on friea this can be found at ~cvincent/FreeGS/freegsnke. You will also need to run this module using python 3.9
+git clone https://github.com/CharlieBoswell/musd.git
 
-To install first create a python virtual environment:
-`python3 -m venv venv`
+In your terminal, navigate to the extracted folder. You can do this with `cd <name of directory you want to go into>`. Press tab to see all the possibilities. If you need to go back you can use `cd ../`. To check all the files in the current directory, use `ls`. Alternatively, you can get there from File Explorer and right clicking as mentioned earlier.
 
-Then activate the virtual environment:
-`source venv/bin/activate`
+If you're using Windows, you need to run the install.bat script like this: `.\install.bat`. On Linux, `./install.sh`. This will create something called a virtual environment in Python so we can keep everything in the project contained in one corner. Then all of the libraries needed for the tool are downloaded and installed.
 
-First install freegsnke, this can likely be done by going to ~cvincent/FreeGS/freegsnke and running
-`pip install ".[freegsfast]"`
+Running
+-------
 
-Upgrade your pip and install the package:
-```
-python3 -m pip install --upgrade pip
-python3 -m pip install -e .
+We have to run it from inside our virtual environment. If you just set up the environment you probably don't need to do anything, but you can get back into an environment with `.\venv\Scripts\activate` on Windows or `source venv/bin/activate` on Linux. You could even just run the install script again.
 
-It has been pointed out to me that install freegsnke from my directory doesn't work. Alternatively you can source the virtual environment from my area and that should hopefully work.
-`source ~cvincent/MUSD/musd/venv/bin/activate`
-
-## Metadata
-
-Important information for running this code on the scheduler is found in
-`scheduler_dependencies.yml`. Python dependencies when using this code as a library are
-specified in `pyproject.toml`. Pinned dependencies are specified in
-`requirements.txt` for reproducible execution.
+To boot up the tool, execute the run script with .\run.bat on Windows or ./run.sh on Linux. Have fun exploring!

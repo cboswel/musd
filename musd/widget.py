@@ -92,9 +92,9 @@ class Widget(QWidget):
         self.shot_time_slider = QSlider(Qt.Horizontal)
         self.shot_time_edit = QLineEdit(str(self.shot_time))
 
-        with open("/home/charlie/CLEANmusd/musd_config/efit_times.pickle", "rb") as pickle_file:
+        with open("./musd_config/efit_times.pickle", "rb") as pickle_file:
             self.efit_times = pickle.load(pickle_file)
-        with open("/home/charlie/CLEANmusd/musd_config/efit_status.pickle", "rb") as pickle_file:
+        with open("./musd_config/efit_status.pickle", "rb") as pickle_file:
             self.efit_status = pickle.load(pickle_file).data
         self.shot_time_slider.setMinimum(0)
         self.shot_time_slider.setMaximum(len(self.efit_times) - 1)
