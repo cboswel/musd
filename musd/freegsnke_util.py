@@ -44,12 +44,12 @@ def set_env(config=None, symmetric_machine=False):
     # Now that the files are made we can set the environment variables
     # Personally I'm not sure I like this way of setting up the machine, but
     # I don't really have the time to faff with it right now
-    pckl_files = [f"{config}/MAST-U_active_coils.pickle",
-                  f"{config}/MAST-U_active_coils_nonsym.pickle",
-                  f"{config}/MAST-U_passive_coils.pickle",
-                  f"{config}/MAST-U_wall.pickle",
-                  f"{config}/MAST-U_limiter.pickle",
-                  f"{config}/MAST-U_magnetic_probes.pickle"]
+    pckl_files = [os.path.normpath(f"{config}/MAST-U_active_coils.pickle"),
+                  os.path.normpath(f"{config}/MAST-U_active_coils_nonsym.pickle"),
+                  os.path.normpath(f"{config}/MAST-U_passive_coils.pickle"),
+                  os.path.normpath(f"{config}/MAST-U_wall.pickle"),
+                  os.path.normpath(f"{config}/MAST-U_limiter.pickle"),
+                  os.path.normpath(f"{config}/MAST-U_magnetic_probes.pickle")]
     print(pckl_files)
     pckl_exist = True
     for i in pckl_files:
@@ -275,9 +275,9 @@ def plot_equilibrium(self):
         self.efit_error_label.setParentItem(self.p1.graphicsItem())
 
     if self.equil_lim is None:
-        with open("./musd_config/equil_r_lim.pickle", "rb") as pickle_file:
+        with open(os.path.normpath("./musd_config/equil_r_lim.pickle"), "rb") as pickle_file:
             self.equil_r_lim = list(pickle.load(pickle_file))
-        with open("./musd_config/equil_z_lim.pickle", "rb") as pickle_file:
+        with open(os.path.normpath("./musd_config/equil_z_lim.pickle"), "rb") as pickle_file:
             self.equil_z_lim = list(pickle.load(pickle_file))
         self.equil_lim = self.p1.plot(self.equil_r_lim, self.equil_z_lim, pen='grey')
 
@@ -418,21 +418,21 @@ def load_static_solver_inputs(self, zero_passives=False):
     #current_labels = client.get('/epm/input/constraints/pfcircuits/shortname', self.shot).data          # active/passive coil current names
     #currents_values = client.get('/epm/input/constraints/pfcircuits/computed', self.shot).data          # active/passive coil current values
 
-    with open("./musd_config/Ip.pickle", "rb") as pickle_file:
+    with open(os.path.normpath("./musd_config/Ip.pickle"), "rb") as pickle_file:
         Ip = np.vstack(list(pickle.load(pickle_file).values()))
-    with open("./musd_config/fvac.pickle", "rb") as pickle_file:
+    with open(os.path.normpath("./musd_config/fvac.pickle"), "rb") as pickle_file:
         fvac = np.vstack(list(pickle.load(pickle_file).values()))
-    with open("./musd_config/alpha.pickle", "rb") as pickle_file:
+    with open(os.path.normpath("./musd_config/alpha.pickle"), "rb") as pickle_file:
         alpha = np.vstack(list(pickle.load(pickle_file).values()))
-    with open("./musd_config/beta.pickle", "rb") as pickle_file:
+    with open(os.path.normpath("./musd_config/beta.pickle"), "rb") as pickle_file:
         beta = np.vstack(list(pickle.load(pickle_file).values()))
-    with open("./musd_config/alpha_logic.pickle", "rb") as pickle_file:
+    with open(os.path.normpath("./musd_config/alpha_logic.pickle"), "rb") as pickle_file:
         alpha_logic = list(pickle.load(pickle_file).values())
-    with open("./musd_config/beta_logic.pickle", "rb") as pickle_file:
+    with open(os.path.normpath("./musd_config/beta_logic.pickle"), "rb") as pickle_file:
         beta_logic = list(pickle.load(pickle_file).values())
-    with open("./musd_config/current_lables.pickle", "rb") as pickle_file:
+    with open(os.path.normpath("./musd_config/current_lables.pickle"), "rb") as pickle_file:
         current_labels = list(pickle.load(pickle_file).values())
-    with open("./musd_config/currents_values.pickle", "rb") as pickle_file:
+    with open(os.path.normpath("./musd_config/currents_values.pickle"), "rb") as pickle_file:
         currents_values = np.vstack(list(pickle.load(pickle_file).values()))
 
 
