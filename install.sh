@@ -9,3 +9,4 @@ source venv/bin/activate
 pip install freegsnke/.
 pip install .
 pip install freegs4e
+python -m musd

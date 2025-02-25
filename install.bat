@@ -8,7 +8,7 @@ if not exist "venv" (
   )
 )
 
-call venv\Scripts\activate
+call .\venv\Scripts\activate
 if errorlevel 1 (
   exit /b 1
 )
