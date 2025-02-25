@@ -3,9 +3,7 @@ import typing
 import inspect
 import functools
 
-
 PathStr = typing.Union[os.PathLike, str]
-
 
 def is_type(instance, type_info):
     if type_info == typing.Any:

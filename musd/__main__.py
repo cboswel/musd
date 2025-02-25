@@ -20,7 +20,7 @@ from PyQt5 import QtCore
 logger = logging.getLogger("musd")
 PathStr = type_checks.PathStr
 
-@type_checks.enforce_types
+#@type_checks.enforce_types
 def run_gui(
         shot: int = 51118,
         time: float = 0.3,
