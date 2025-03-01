@@ -10,11 +10,17 @@ Quickstart Guide
 
 On Windows 10 or 11:
 
-    - Make sure you have Python version 3.9 to 3.12. Press the Windows key and type Python - it it's installed it will suggest Apps named by version number.
+    - Make sure you have Python version 3.9 to 3.12. Press the Windows key and
+    type Python - it it's installed it will suggest Apps named by version number.
 
-    - On this webpage (https://github.com/cboswel/musd/) click the green Code button near the top right of the page. Select Download as Zip. Save it somewhere sensible then extract it.
+    - On this webpage (https://github.com/cboswel/musd/) click the green Code
+    button near the top right of the page. Select Download as Zip. Save it 
+    somewhere sensible then extract it.
 
-    - Use file manager to navigate to the extracted folder. Try to find install.bat and double click it. This should install lots of Python libraries then run the tool. The run.bat file can be used if you use install.bat first, exit out, and then want to open it again without installing all the libraries from scratch.
+    - Use file manager to navigate to the extracted folder. Try to find install.bat
+    and double click it. This should install lots of Python libraries then run the
+    tool. The run.bat file can be used if you use install.bat first, exit out, and
+    then want to open it again without installing all the libraries from scratch.
 
 
 Installation Notes
